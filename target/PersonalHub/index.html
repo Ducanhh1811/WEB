@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='sheetIndex.css'>
+</head>
+<body>
+    <div class="header">
+        <div class="lg">    
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Ig0zrxDajBmvNL0BG2SS7Tna5qVYM_z_Jg&s" class="logo">
+        </div>
+
+        <div class="menu">
+            <ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Movies</a></li>
+				<li><a href="#">Foods</a></li>
+				<li><a href="#">Subjects</a></li>
+				<li><a href="#">Schedules</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Games</a></li>
+			</ul> 
+        </div>
+    </div>
+
+    <div>
+        <div class="img1">
+            <img src="../../../Picture/wavy-black-white-background.jpg" alt="Background image" style="max-width: 100%; display: block;">
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
