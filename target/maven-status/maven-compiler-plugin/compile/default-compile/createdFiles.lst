@@ -1,2 +1,14 @@
-dal\DBContext.class
 dal\DBTest.class
+model\user\user.class
+dal\UserDAO.class
+dal\DBContext.class
+model\game\games.class
+model\game\UserGame.class
+model\food\foods.class
+model\game\Genre.class
+model\study\subjects.class
+model\game\GameReview.class
+model\movie\movies.class
+model\project\projects.class
+controller\userServlet.class
+model\schedule\schedules.class

@@ -1,2 +1,14 @@
+E:\Hoc_Tap\Code\WEB\src\main\java\controller\userServlet.java
 E:\Hoc_Tap\Code\WEB\src\main\java\dal\DBContext.java
 E:\Hoc_Tap\Code\WEB\src\main\java\dal\DBTest.java
+E:\Hoc_Tap\Code\WEB\src\main\java\dal\UserDAO.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\food\foods.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\game\GameReview.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\game\games.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\game\Genre.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\game\UserGame.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\movie\movies.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\project\projects.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\schedule\schedules.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\study\subjects.java
+E:\Hoc_Tap\Code\WEB\src\main\java\model\user\user.java

@@ -10,9 +10,10 @@ body{
 }
 
 .header{
-  display: flex ;
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
   padding: 12px 30px;
   border-bottom: 1px solid rgba(17, 17, 17, 0.12);
   background: rgba(220, 220, 220, 0.7);
@@ -29,6 +30,12 @@ body{
   background: rgba(210, 210, 210, 0.82);
 }
 
+.lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .lg img{
   width: 65px;
   height: 65px;
@@ -42,13 +49,22 @@ body{
   height: 42px;
 }
 
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
 .menu ul{
   list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 28px;
-  padding-right: 200px;
   margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 .menu ul li a{
