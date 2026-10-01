@@ -11,23 +11,25 @@ import model.user.user;
 public class userDAO extends DBContext {
     public user Login(String username, String password) {
         String sql = "  select * from Users\r\n" + //
-                "  WHERE [username] like '%?%' and [password] like '%?%'";
+                "  WHERE [username] = ? and [password] = ?";
         try {
             PreparedStatement ptm = connection.prepareStatement(sql);
             ptm.setString(1, username);
             ptm.setString(2, password);
             ResultSet rs = ptm.executeQuery();
-            if (rs.next()) {
-                user u = new user();
-                rs.getInt("userID");
-                rs.getString("username");
-                rs.getString("password");
-                rs.getString("fullname");
-                rs.getString("email");
-                rs.getString("role");
-                rs.getTimestamp("createdDate");
-                return u;
+
+            if(rs.next()){
+                return new user(
+                    rs.getInt("userID"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("fullName"),
+                    rs.getString("email"),
+                    rs.getString("role"),
+                    rs.getTimestamp("createdDate")
+                );
             }
+            
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

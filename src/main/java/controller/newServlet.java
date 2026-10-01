@@ -28,7 +28,7 @@ public class newServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -36,28 +36,15 @@ public class newServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            try {
-                String a = request.getParameter("a");
-                String b = request.getParameter("b");
-                String output = login(a, b);
-                out.println("<div id=\"txtOutput\">" + output + "</div>");
-            } catch (Exception e) {
-                out.println("<div id=\"txtError\">Cannot space</div>");
-            }
+
 
             out.println("</body>");
             out.println("</html>");
         }
     }
 
-    private String login(String a, String b) {
-        if (a.isEmpty() || b.isEmpty()) {
-            return "Username or password cannot empty";
-        } else {
-            return "Login Successfully";
-        }
-    }
 
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

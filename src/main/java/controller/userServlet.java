@@ -1,42 +1,45 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.http.HttpSession;
 /**
  *
  * @author Admin
  */
+import dal.user.userDAO;
+import model.user.user;
+
 @WebServlet(name = "userServlet", urlPatterns = { "/userSVL" })
 public class userServlet extends HttpServlet {
 
+    userDAO dao = new userDAO();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        try {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
 
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet OrderDetailsServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-
-            out.println("");
-
-            out.println("</body>");
-            out.println("</html>");
+            user user = dao.Login(username, password);
+            if (user != null) {
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                response.sendRedirect(request.getContextPath() + "/index.html");
+                return;
+            }
+        } catch (Exception e) {
+            log("Login failed because of a server error", e);
         }
+
+        response.sendRedirect(request.getContextPath() + "/Login/login.html?error=1");
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
-    // sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      * 

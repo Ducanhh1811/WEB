@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+    <link rel='stylesheet' href='login.css'>
+</head>
+
+<body>
+    <form action="../userSVL" method="post">
+        Enter User Name: <input type="text" name="username" placeholder="Username"><br>
+        Enter Password: <input type="password" name="password" placeholder="Password"><br>
+        <p id="loginError" role="alert" hidden>Username hoặc mật khẩu không đúng. Vui lòng thử lại.</p>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        if (new URLSearchParams(window.location.search).has("error")) {
+            document.getElementById("loginError").hidden = false;
+        }
+    </script>
+</body>
+
+</html>

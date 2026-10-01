@@ -16,8 +16,7 @@ body{
   gap: 30px;
   padding: 12px 30px;
   border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-  background: rgba(220, 220, 220, 0.7);
-  backdrop-filter: blur(8px);
+  background: #dcdcdc;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -27,7 +26,7 @@ body{
 
 .header.scrolled {
   padding: 6px 24px;
-  background: rgba(210, 210, 210, 0.82);
+  background: #d2d2d2;
 }
 
 .lg {
@@ -86,6 +85,8 @@ body{
 .img1 {
   width: 100%;
   margin: 0;
+  position: relative;
+  z-index: 0;
 }
 
 .img1 img {
