@@ -1,46 +1,112 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  background-color: #f4f4f9;
   font-family: Arial, sans-serif;
 }
 
-form {
-  background: #ffffff;
-  padding: 25px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Container bao phủ toàn màn hình chứa ảnh nền */
+.login-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  /* Khoảng cách giữa các phần tử */
-  width: 300px;
+  justify-content: center;
+  align-items: center;
+  /* Đặt ảnh nền trực tiếp vào CSS để làm hiệu ứng kính chuẩn nhất */
+  background: url('../Picture/wavy-black-white-background.jpg') no-repeat center center/cover;
 }
 
-input,
-button {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+/* Khung Form Trong Suốt Kính Mờ (Glassmorphism) */
+.login-form {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 30px;
+
+  /* Tạo màu nền bán trong suốt (trắng mờ) */
+  background: rgba(255, 255, 255, 0.15);
+
+  /* Hiệu ứng làm mờ phần nền phía sau form */
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+
+  /* Viền kính mờ & Đổ bóng nổi bật */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-button {
-  background-color: #007bff;
-  color: white;
+.login-form h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Các ô nhập liệu trong suốt */
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  backdrop-filter: blur(5px);
+}
+
+/* Chữ gợi ý (placeholder) màu sáng */
+.form-group input::placeholder {
+  color: #ddd;
+}
+
+.form-group input:focus {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #fff;
+}
+
+/* Nút đăng nhập nổi bật */
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
   border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  transition: 0.3s;
 }
 
-button:hover {
-  background-color: #0056b3;
+.btn-submit:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Thông báo lỗi */
+#loginError {
+  color: #ff4d4d;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
 }

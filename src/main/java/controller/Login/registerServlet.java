@@ -1,23 +1,22 @@
-package controller;
+package controller.Login;
 
 import java.io.IOException;
+
+import dal.user.userDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-/**
- *
- * @author Admin
- */
-import dal.user.userDAO;
+
 import model.user.user;
 
-@WebServlet(name = "userServlet", urlPatterns = { "/userSVL" })
-public class userServlet extends HttpServlet {
-
+@WebServlet(name = "registerServlet", urlPatterns = { "/registerSVL" })
+public class registerServlet extends HttpServlet{
+    
     userDAO dao = new userDAO();
+    String service = request.getParameter("service");
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,7 +37,7 @@ public class userServlet extends HttpServlet {
 
         response.sendRedirect(request.getContextPath() + "/Login/login.html?error=1");
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
